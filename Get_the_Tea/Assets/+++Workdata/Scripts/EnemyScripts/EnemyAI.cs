@@ -4,13 +4,14 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public float moveSpeed = 3f;
-    public int damage = 1;
-
     private Transform target;
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        if (RoomManager.Instance != null)
+        {
+            target = RoomManager.Instance.player.transform;
+        }
     }
 
     void Update()
@@ -23,13 +24,10 @@ public class EnemyAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        PlayerHealth health = collision.gameObject.GetComponent<PlayerHealth>();
+        if (health != null)
         {
-            PlayerHealth health = collision.gameObject.GetComponent<PlayerHealth>();
-            if (health != null)
-            {
-                health.TakeDamage(damage);
-            }
+            health.TakeDamage();
         }
     }
 }

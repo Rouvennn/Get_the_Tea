@@ -65,7 +65,7 @@ public class RoomManager : MonoBehaviour
     // places player at spawn
     void SpawnPlayer()
     {
-        if (player != null) return;
+        if (player == null) return;
         // Move player to the spawn point in new room
         Transform spawnPoint = currentRoom.spawnpoint_Player;
         if (spawnPoint != null)
@@ -119,6 +119,7 @@ public class RoomManager : MonoBehaviour
     {
         collected++;
         points += 10;
+        Debug.Log($"Plus 10 Points! Total points now: {points}");
 
         if (collected >= totalCollectibles)
         {

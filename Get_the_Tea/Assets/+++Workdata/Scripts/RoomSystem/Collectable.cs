@@ -9,8 +9,10 @@ public class Collectible : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        var playerHealth = other.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
         {
+            Debug.Log("Collected Item");
             RoomManager.Instance.CollectItem();
             Destroy(this.gameObject);
         }

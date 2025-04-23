@@ -5,7 +5,7 @@ public class Door : MonoBehaviour
     private bool isOpen = false;
     private bool triggered = false;
 
-    private float openHight = 3;
+    public float openHight = 5;
 
     public void OpenDoor()
     {

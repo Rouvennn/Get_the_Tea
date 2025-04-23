@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHearts = 3;
-    private int currentHearts;
+    public int currentHearts;
 
     private bool isInvincible = false;
     public float invincibilityDuration = 1f;
