@@ -72,3 +72,40 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+
+/Get_the_Tea/Library
+/Get_the_Tea/Temp
+/Get_the_Tea/Obj
+/Get_the_Tea/Build
+/Get_the_Tea/Builds
+/Get_the_Tea/Logs
+/Get_the_Tea/UserSettings
+/Get_the_Tea/ProjectSettings
+/Get_the_Tea/Packages
