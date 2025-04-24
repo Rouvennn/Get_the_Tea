@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHearts = maxHearts;
+        UIManager.Instance.UpdateHealth(currentHearts, maxHearts);
     }
 
     public void TakeDamage(int damage = 1)
@@ -20,6 +21,8 @@ public class PlayerHealth : MonoBehaviour
 
         currentHearts -= damage;
         Debug.Log($"Player took damage! Hearts left: {currentHearts}");
+        UIManager.Instance.UpdateHealth(currentHearts, maxHearts);
+
 
         if (currentHearts <= 0)
         {

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
@@ -15,6 +16,7 @@ public class RoomManager : MonoBehaviour
     [Header("Enemies Settings")]
     public GameObject enemyPrefab;
     public float enemySpawnrate = 0.6f; // 60% chance to spawn at each point
+    private List<GameObject> spawnedEnemies = new();
 
     [Header("Collectable Settings")]
     public GameObject collectablesPrefab;
@@ -37,6 +39,7 @@ public class RoomManager : MonoBehaviour
     // Resets Counters, loads the next room, places player at spawn, spawns enemies, spawns collectables
     public void GetNextRoom()
     {
+        CleanupEnemies();
         collected = 0;
         totalCollectibles = 0;
         
@@ -84,7 +87,8 @@ public class RoomManager : MonoBehaviour
         {
             if (Random.value <= enemySpawnrate) 
             {
-                Instantiate(enemyPrefab, spawn.position, Quaternion.identity);
+                GameObject enemy = Instantiate(enemyPrefab, spawn.position, Quaternion.identity);
+                spawnedEnemies.Add(enemy);
             }
         }
     }
@@ -112,6 +116,8 @@ public class RoomManager : MonoBehaviour
     public void RegisterCollectible()
     {
         totalCollectibles++;
+        UIManager.Instance.UpdateCollectibles(collected, totalCollectibles);
+        UIManager.Instance.UpdateScore(points);
     }
 
     // collects collectable
@@ -120,6 +126,9 @@ public class RoomManager : MonoBehaviour
         collected++;
         points += 10;
         Debug.Log($"Plus 10 Points! Total points now: {points}");
+        UIManager.Instance.UpdateCollectibles(collected, totalCollectibles);
+        UIManager.Instance.UpdateScore(points);
+
 
         if (collected >= totalCollectibles)
         {
@@ -132,5 +141,16 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+
+    // cleanup enemies
+    void CleanupEnemies()
+    {
+        foreach (var enemy in spawnedEnemies)
+        {
+            if (enemy != null)
+                Destroy(enemy);
+        }
+        spawnedEnemies.Clear();
+    }
 
 }

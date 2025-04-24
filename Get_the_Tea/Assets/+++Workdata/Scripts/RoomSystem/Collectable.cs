@@ -9,8 +9,7 @@ public class Collectible : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        var playerHealth = other.GetComponent<PlayerHealth>();
-        if (playerHealth != null)
+        if (other.gameObject == RoomManager.Instance.player.gameObject)
         {
             Debug.Log("Collected Item");
             RoomManager.Instance.CollectItem();

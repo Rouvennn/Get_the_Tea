@@ -30,7 +30,13 @@ public class Door : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             triggered = true;
-            RoomManager.Instance.GetNextRoom();
+
+            ScreenFader.Instance.FadeIn(() => {
+                RoomManager.Instance.GetNextRoom();
+                ScreenFader.Instance.FadeOut();
+            });
+
+
         }
     }
 }
