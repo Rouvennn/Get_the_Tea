@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6997237387080354640}
   - component: {fileID: 619660921135540295}
   - component: {fileID: 2713502553280039068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 2355557785615855876}
   - component: {fileID: 4085001583131453753}
   - component: {fileID: 5303896497546780709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door Frame Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 5658128979138330665}
   - component: {fileID: 3883231810867407226}
   - component: {fileID: 1759666516322447219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 3817039499164554212}
   - component: {fileID: 7113742804297789723}
   - component: {fileID: 1975492940493366630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Meassure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 5150646927791477473}
   - component: {fileID: 938615619306689911}
   - component: {fileID: 6355626028467198222}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door Frame Right On Top (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 1682222851572622358}
   - component: {fileID: 3178573546379657665}
   - component: {fileID: 6936517409072614047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door Frame Right On Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 8645026199182027977}
   - component: {fileID: 4002447109225780903}
   - component: {fileID: 2060936048792722388}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door Frame Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
